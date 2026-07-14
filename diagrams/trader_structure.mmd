@@ -1,0 +1,26 @@
+classDiagram
+    class KalshiTrader {
+        -String api_key_id
+        -String private_key_path
+        -ApiClient api_client
+        -MarketsApi market_client
+        -PortfolioApi portfolio_client
+        +__init__(env_path)
+        +connect()
+        +get_balance() float
+        +get_market_data(ticker) dict
+        +place_order(ticker, side, price, quantity) bool
+    }
+
+    class TradeLogger {
+        +String log_file
+        +log_trade(trade_details)
+        +log_error(error_message)
+    }
+
+    class EnvironmentLoader {
+        +load_secrets(env_path) dict
+    }
+
+    KalshiTrader --> TradeLogger : uses
+    KalshiTrader --> EnvironmentLoader : uses
