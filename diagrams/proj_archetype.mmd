@@ -1,0 +1,15 @@
+kalshi_project/
+│
+├── .env                        # Untracked file holding Kalshi API keys
+├── requirements.txt            # List of dependencies (streamlit, kalshi-python, etc.)
+│
+├── app.py                      # The UI: Houses the Streamlit dashboard
+├── main.py                     # The Brain: Houses the MainOrchestrator class
+├── kalshi_test.py              # The Sandbox: Your isolated API testing script
+│
+└── core/                       # Directory for your underlying engine components
+    ├── __init__.py             # Empty file telling Python this folder is a module
+    ├── env_loader.py           # Houses the EnvironmentLoader class
+    ├── kalshi_trader.py        # Houses the KalshiTrader class
+    ├── trade_logger.py         # Houses the TradeLogger class
+    └── conflict_detector.py    # Houses the ConflictDetector class
