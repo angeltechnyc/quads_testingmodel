@@ -1,4 +1,6 @@
-from custom_modules.prediction_app.predict import EnvironmentLoader
+from core.env_loader import EnvironmentLoader
+from core.kalshi_trader import KalshiTrader
+from core.conflict_detector import ConflictDetector
 
 class MainApplication:
     def __init__(self):

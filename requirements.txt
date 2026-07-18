@@ -1,0 +1,5 @@
+streamlit
+kalshi_python_sync
+pandas
+scikit-learn
+pytest
