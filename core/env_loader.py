@@ -1,5 +1,4 @@
 import os
-
 def load_secrets(self, env_path: str) -> dict:
         """
         Pre-emptively checks for a .env file and parses its contents 
@@ -24,6 +23,11 @@ def load_secrets(self, env_path: str) -> dict:
                 if '=' in line:
                     # Split only on the first '=' to protect complex keys/tokens
                     key, value = line.split('=', 1)
-                    secrets[key.strip()] = value.strip()
+                    
+                    # Strip whitespace and any surrounding quotes
+                    clean_key = key.strip()
+                    clean_value = value.strip().strip('"').strip("'")
+                    
+                    secrets[clean_key] = clean_value
                     
         return secrets
