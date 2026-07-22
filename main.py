@@ -1,6 +1,7 @@
 from src.env_loader import EnvironmentLoader
 from src.kalshi_trader import KalshiTrader
-from src.conflict_detector import ConflictDetector
+# TODO: Implement ConflictDetector in src/conflict_detector.py before importing
+# from src.conflict_detector import ConflictDetector
 
 class MainApplication:
     def __init__(self):
