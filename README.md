@@ -12,7 +12,7 @@ It features a visual dashboard built with Streamlit (for now) for easy interacti
 * **Live Market Dashboard:** Interactive interface to search tickers, inspect live order books, and view prediction metrics.
 * **Decoupled Architecture:** The visual dashboard (`app.py`) only communicates with the backend orchestrator (`main.py`), making it easy to swap out the interface later without rewriting core algorithms.
 * **Safe Key Management:** Uses a custom environment loader to read local `.env` keys securely, keeping private credentials out of source code and version control.
-* **Data Validation & Error Handling:** Double-checks inputs using Pydantic schemas to catch invalid tickers or numbers before making network requests.
+* **Data Validation & Error Handling (planned):** Validates inputs (e.g., tickers and numeric parameters) before making network requests.
 * **Isolated Testing Sandbox:** Includes `kalshi_test.py` to ping the Kalshi API and verify credentials without having to launch the full web interface.
 
 ---
