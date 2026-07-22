@@ -1,14 +1,18 @@
-# Python environment (The folder we created with venv)
+# Python environment (Folder with created with venv)
 venv/
 
-# Environment variables (Where your keys will live)
+# Environment variables (Where keys are/will live)
 .env
 
-# RSA Private Key files (Never upload these!)
+# RSA Private Key files (Don't upload these)
 *.pem
 *.key
 
-# Compiled Python files (These are created automatically)
+# Private Planning and Notes
+future_architecture.mmd
+ARCHITECTURE.md
+
+# Compiled Python files (Created automatically)
 __pycache__/
 *.pyc
 *.pyo
