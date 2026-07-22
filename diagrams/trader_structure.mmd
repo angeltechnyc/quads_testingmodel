@@ -1,4 +1,21 @@
 classDiagram
+    class AppUI {
+        <<app.py>>
+        +render_dashboard()
+        +get_user_inputs()
+    }
+    
+    class MainOrchestrator {
+        <<main.py>>
+        +initialize_system()
+        +run_prediction_pipeline(ticker)
+    }
+    
+    class ConflictDetector {
+        +validate_inputs(data) bool
+        +detect_logical_contradictions()
+    }
+    
     class KalshiTrader {
         -String api_key_id
         -String private_key_path
@@ -21,6 +38,15 @@ classDiagram
     class EnvironmentLoader {
         +load_secrets(env_path) dict
     }
+    
+    class KalshiTestSandbox {
+        <<kalshi_test.py>>
+        +test_api_connection()
+    }
 
-    KalshiTrader --> TradeLogger : uses
-    KalshiTrader --> EnvironmentLoader : uses
+    AppUI --> MainOrchestrator : Sends inputs / Requests data
+    MainOrchestrator --> ConflictDetector : Validates logic pre-trade
+    MainOrchestrator --> KalshiTrader : Executes core market functions
+    KalshiTrader --> EnvironmentLoader : uses (Fetches credentials)
+    KalshiTrader --> TradeLogger : uses (Records activity)
+    KalshiTestSandbox ..> KalshiTrader : (Isolated testing only)
