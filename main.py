@@ -1,6 +1,6 @@
-from core.env_loader import EnvironmentLoader
-from core.kalshi_trader import KalshiTrader
-from core.conflict_detector import ConflictDetector
+from src.env_loader import EnvironmentLoader
+from src.kalshi_trader import KalshiTrader
+from src.conflict_detector import ConflictDetector
 
 class MainApplication:
     def __init__(self):
