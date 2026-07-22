@@ -22,7 +22,7 @@ It features a visual dashboard built with Streamlit (for now) for easy interacti
 * **`app.py`**: The Streamlit user interface (buttons, input boxes, dashboard layouts).
 * **`main.py`**: The backend orchestrator that handles data flow and commands the trading logic.
 * **`kalshi_test.py`**: A lightweight sandbox script for testing API keys and network connections.
-* ** `custom_modules/`**: Contains core modules for handling API orders (`kalshi_trader.py`), reading secrets (`env_loader.py`), validating data (`conflict_detector.py`), and logging operations (`trade_logger.py`).
+* **`src/`**: Contains core modules for handling API orders (`kalshi_trader.py`), reading secrets (`env_loader.py`), validating data (`conflict_detector.py`), and logging operations (`trade_logger.py`).
 
 ---
 
