@@ -1,0 +1,41 @@
+flowchart TB
+    subgraph Client [Frontend Interface]
+        UI[React / JSX Web App]
+        State[State Management]
+        UI <--> State
+    end
+
+    subgraph API_Gateway [FastAPI Backend]
+        REST[RESTful API Endpoints]
+        Router[Request Router]
+        REST <--> Router
+    end
+
+    subgraph Intelligence [RAG & AI Engine]
+        LLM[GenAI Model]
+        VectorDB[(ChromaDB / Vector Store)]
+        Embeddings[Embedding Model]
+        DataFeeds[Live Market News & Docs]
+        
+        DataFeeds --> Embeddings
+        Embeddings --> VectorDB
+        VectorDB --> LLM
+    end
+
+    subgraph Execution [Kalshi Core Engine]
+        Orchestrator[Main Orchestrator]
+        Conflict[ConflictDetector via Pydantic]
+        Trader[KalshiTrader]
+        Logger[TradeLogger]
+        EnvLoader[EnvironmentLoader]
+    end
+
+    %% Connections
+    State == HTTP / WebSockets ==> REST
+    Router <--> Orchestrator
+    Orchestrator <--> LLM
+    Orchestrator --> Conflict
+    Conflict --> Trader
+    Trader --> Logger
+    Trader -.-> EnvLoader
+    Trader == Secure Execution ==> Exchange((Kalshi Exchange))
