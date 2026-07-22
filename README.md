@@ -29,5 +29,5 @@ It features a visual dashboard built with Streamlit (for now) for easy interacti
 ## Quick Start
 
 ### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
+
+    pip install -r requirements.txt
